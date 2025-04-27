@@ -33,3 +33,15 @@ equals() internally checks both keys and values.
 Order does not matter because HashMap is unordered.
 
 Time complexity: O(n) where n = number of entries.
+
+
+
+**Map with key and list of values**
+Map<String,List<String>> map = new HashMap();
+
+adding values to the map
+map.get(key).add(value);
+map.gey(key) gives us the value which is list here and we add value to the list by .add(value)
+
+**Return List of values as list**
+return new ArrayList<>(map.values());
