@@ -45,3 +45,30 @@ map.gey(key) gives us the value which is list here and we add value to the list 
 
 **Return List of values as list**
 return new ArrayList<>(map.values());
+
+
+**IMP**
+
+
+import java.util.*;
+
+public class SortMapByValueDescending {
+    public static void main(String[] args) {
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(1, 50);
+        map.put(2, 10);
+        map.put(3, 40);
+        map.put(4, 20);
+
+        // Convert to list
+        List<Map.Entry<Integer, Integer>> entryList = new ArrayList<>(map.entrySet());
+
+        // Sort by value descending
+        entryList.sort((a, b) -> b.getValue().compareTo(a.getValue()));
+
+        // Directly print
+        for (Map.Entry<Integer, Integer> entry : entryList) {
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
+        }
+    }
+}
