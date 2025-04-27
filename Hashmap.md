@@ -57,6 +57,7 @@ return new ArrayList<>(map.values());
 import java.util.*;
 
 public class SortMapByValueDescending {
+
     public static void main(String[] args) {
         Map<Integer, Integer> map = new HashMap<>();
         map.put(1, 50);
@@ -77,9 +78,10 @@ public class SortMapByValueDescending {
     }
 }
 
+//other imp way
 
-List<Map.Entry<Integer, Integer>> entries 
-= new ArrayList<>(freqMap.entrySet());
+List<Map.Entry<Integer, Integer>> entries = new ArrayList<>(freqMap.entrySet());
+
 
 entries = [
   Map.Entry(key=1, value=3),
@@ -87,8 +89,12 @@ entries = [
   Map.Entry(key=3, value=1)
 ]
 
+
+
 entries.get(i)             // gets the i-th Map.Entry from the list
 entries.get(i).getKey()    // gets the key (i.e., the number itself)
+
+
 
 entries.get(0) -> Entry(1, 3)   // number 1 appears 3 times
 .getKey()     -> 1             // we’re extracting just the number
