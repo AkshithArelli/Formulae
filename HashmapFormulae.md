@@ -13,3 +13,23 @@
 | `entrySet()` | `map.entrySet();` | Get set of key-value entries (handy for iterating) |
 | `getOrDefault(K key, V defaultValue)` | `map.getOrDefault(1, "default");` | If key exists, return value; else return default |
 | `putIfAbsent(K key, V value)` | `map.putIfAbsent(1, "one");` | Only put if key is not already present |
+
+
+If you want to check if two HashMaps are exactly equal (same keys, same values):
+
+Map<Integer, String> map1 = new HashMap<>();
+Map<Integer, String> map2 = new HashMap<>();
+
+map1.put(1, "one");
+map1.put(2, "two");
+
+map2.put(2, "two");
+map2.put(1, "one");
+
+boolean areEqual = map1.equals(map2);  // true
+
+equals() internally checks both keys and values.
+
+Order does not matter because HashMap is unordered.
+
+Time complexity: O(n) where n = number of entries.
