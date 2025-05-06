@@ -14,5 +14,9 @@ return new ArrayList<>(result);![image](https://github.com/user-attachments/asse
 
 
 Set<Integer> set = new HashSet<>();
+
 set.add(value);
+
 set.contains(value) //returns boolean
+
+set.remove(value)
