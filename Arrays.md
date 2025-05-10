@@ -38,6 +38,7 @@ int[][] matrix = {
 }
 
 no.of rows = matrix.length //2
+
 no.of columns = matrix[0].length //3
 
 matrix[i][j] //access element at ith row and jth column
@@ -50,6 +51,17 @@ for (int i=0; i<matrix.length; i++) {
 }
 
 
+//for loop with +2 increment
+for (int i=0; i<n; i+=2) {
+}
 
+//
+*IMP************
+List<Integer> list = new ArrayList<>();
 
+get length or size
+list.size();  //not list.length; it is for plain arrays
+
+get ith value
+list.get(i);   //not list[i], again it for plain arrays
 
