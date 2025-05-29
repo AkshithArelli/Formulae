@@ -14,9 +14,38 @@
 | `getOrDefault(K key, V defaultValue)` | `map.getOrDefault(1, "default");` | If key exists, return value; else return default |
 | `putIfAbsent(K key, V value)` | `map.putIfAbsent(1, "one");` | Only put if key is not already present |
 
+```java
+public class Main {
+    public static void main(String[] args) {
+        Map<String, Integer> userRoles = new HashMap<>();
+        userRoles.put( "admin", 104);
+        userRoles.put( "user", 102);
+        userRoles.put( "manager", 101);
+        System.out.println("User Roles Map: " + userRoles);
+
+        List<Map.Entry<String, Integer>> entries = new ArrayList<>(userRoles.entrySet());
+        System.out.println(entries);
+
+        Collections.sort(entries, (entry1, entry2) -> entry1.getValue().compareTo(entry2.getValue()));
+        for  (Map.Entry<String, Integer> entry : entries) {
+            System.out.println("User ID: " + entry.getKey() + ", Role: " + entry.getValue());
+        }
+    }
+}
+```
+
+```
+output:
+User Roles Map: {manager=101, admin=104, user=102}
+entries: [manager=101, admin=104, user=102]
+User ID: manager, Role: 101
+User ID: user, Role: 102
+User ID: admin, Role: 104
+```
+
 
 If you want to check if two HashMaps are exactly equal (same keys, same values):
-
+```java
 Map<Integer, String> map1 = new HashMap<>();
 Map<Integer, String> map2 = new HashMap<>();
 
@@ -28,22 +57,22 @@ map2.put(1, "one");
 
 boolean areEqual = map1.equals(map2);  // true
 
-equals() internally checks both keys and values.
+//equals() internally checks both keys and values.
 
-Order does not matter because HashMap is unordered.
+//Order does not matter because HashMap is unordered.
 
-Time complexity: O(n) where n = number of entries.
-
+//Time complexity: O(n) where n = number of entries.
+```
 
 
 **Map with key and list of values**
-
+```java
 Map<String,List<String>> map = new HashMap();
 
 adding values to the map
 map.get(key).add(value);
 map.gey(key) gives us the value which is list here and we add value to the list by .add(value)
-
+```
 
 
 **Return List of values as list**
@@ -53,7 +82,7 @@ return new ArrayList<>(map.values());
 
 **IMP**
 
-
+```java
 import java.util.*;
 
 public class SortMapByValueDescending {
@@ -93,7 +122,7 @@ entries = [
 
 entries.get(i)             // gets the i-th Map.Entry from the list
 entries.get(i).getKey()    // gets the key (i.e., the number itself)
-
+```
 
 
 entries.get(0) -> Entry(1, 3)   // number 1 appears 3 times
